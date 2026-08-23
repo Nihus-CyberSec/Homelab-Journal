@@ -22,3 +22,5 @@ This is a running journal of my hands-on cybersecurity homelab — setup notes, 
 
 ## Goal
 Build a public, recruiter-visible record of practical SOC skills while working toward certifications and an entry-level analyst role.
+
+## Investigations
