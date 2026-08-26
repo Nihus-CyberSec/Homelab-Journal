@@ -25,3 +25,6 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 
 ## Investigations
 [VSFTPD 2.3.4 Backdoor Exploitation on Metasploitable2](investigations/vsftpd-234-backdoor-metasploitable.md)
+
+## Setup
+[Homelab Setup](setup-notes/homelab-setup.md)
