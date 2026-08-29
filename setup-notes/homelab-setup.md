@@ -29,8 +29,8 @@ A small, realistic environment for practicing attack and detection workflows: a 
 
 ## Design Notes / Gotchas
 
-- Interface naming isn't consistent across my VMs — the Ubuntu server's interface came up as `enp0s3` (predictable naming), while my other lab machines still use the older `eth0` convention. I ran into this while writing tcpdump commands and now check `ip a` first instead of assuming.
-- My lab uses bridged networking, so it's exposed on the home LAN rather than isolated. That's fine for a personal lab, but it's a gap I'm keeping in mind — a "real" environment would need proper segmentation, and I try to note that in my detection/remediation sections where it's relevant.
+- Interface naming isn't consistent across my VMs — the Ubuntu server's interface came up as `enp0s3` (predictable naming), while other lab machines still use the older `eth0` convention. I ran into this while writing tcpdump commands and now check `ip a` first instead of assuming.
+- My lab uses bridged networking, so it's exposed on the home LAN rather than isolated. While that is fine for a personal lab, it's a gap I'm keeping in mind — a "real" environment would need proper segmentation, and I"ll be noting that in my detection/remediation sections where it's relevant.
 
 ## Why This Setup
 
