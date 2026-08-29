@@ -23,8 +23,11 @@ This is a running journal of my hands-on cybersecurity homelab — setup notes, 
 ## Goal
 Build a public, recruiter-visible record of practical SOC skills while working toward certifications and an entry-level analyst role.
 
+## Setup
+[Homelab Setup](setup-notes/homelab-setup.md)
+
 ## Investigations
 [VSFTPD 2.3.4 Backdoor Exploitation on Metasploitable2](investigations/vsftpd-234-backdoor-metasploitable.md)
 
-## Setup
-[Homelab Setup](setup-notes/homelab-setup.md)
+## Detections
+[SSH brute-force detection and fail2ban](detections/ssh-bruteforce-fail2ban-wazuh.md)
