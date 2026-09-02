@@ -83,4 +83,4 @@ This confirms fail2ban parsed the same failed-login pattern from `auth.log`, cou
 
 - Wazuh's default SSHD ruleset (rule 5760) provided immediate, real-time detection of the brute-force attempt with no custom rule needed.
 - fail2ban independently detected and actively blocked the same attack at the network layer within the failure threshold (27 attempts), stopping the attack before Hydra could succeed.
-- The two tools complement each other: Wazuh gives visibility and alerting (detect), fail2ban gives automatic containment (respond) — together forming a basic but effective detection-and-response pair for brute-force attacks.
+- The two tools: Wazuh and fail2ban complement each other — Whle Wazuh provides detection and visibility, fail2ban provides automatic containment — together forming a basic but effective detect-and-respond pair against brute-force attacks.

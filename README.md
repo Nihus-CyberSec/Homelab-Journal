@@ -30,4 +30,4 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 [VSFTPD 2.3.4 Backdoor Exploitation on Metasploitable2](investigations/vsftpd-234-backdoor-metasploitable.md)
 
 ## Detections
-[SSH brute-force detection and fail2ban](detections/ssh-bruteforce-fail2ban-wazuh.md)
+[SSH Brute-force Detection and Response](detections/ssh-bruteforce-fail2ban-wazuh.md)
