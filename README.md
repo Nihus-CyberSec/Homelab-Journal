@@ -27,7 +27,8 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 [Homelab Setup](setup-notes/homelab-setup.md)
 
 ## Investigations
-[VSFTPD 2.3.4 Backdoor Exploitation on Metasploitable2](investigations/vsftpd-234-backdoor-metasploitable.md)
+[VSFTPD 2.3.4 Backdoor Exploitation on Metasploitable2](investigations/vsftpd-234-backdoor-metasploitable/vsftpd-234-backdoor-metasploitable.md)
+[SOC137 — Malicious File/Script Download Attempt](investigations/soc137-malicious-file-download/SOC137-Malicious-File-Download.md)
 
 ## Detections
 [SSH Brute-force Detection and Response](detections/ssh-bruteforce-fail2ban-wazuh.md)
