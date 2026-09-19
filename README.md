@@ -29,7 +29,7 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 ## Investigations
 - [VSFTPD 2.3.4 Backdoor Exploitation on Metasploitable2](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/vsftpd-234-backdoor-metasploitable/vsftpd-234-backdoor-metasploitable.md)
 - [SOC137 — Malicious File/Script Download Attempt](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc137-malicious-file-download/SOC137-Malicious-File-Download.md)
-- [SOC165 — Possible SQL Injection Payload Detected](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc165-possible-sql-injection-payload-detected/SOC165-SQL-Injection-Investigation)
+- [SOC165 — Possible SQL Injection Payload Detected](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc165-possible-sql-injection-payload-detected/SOC165-SQL-Injection-Investigation.md)
 
 ## Detections
 - [SSH Brute-force Detection and Response](detections/ssh-bruteforce-fail2ban-wazuh.md)
