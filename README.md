@@ -31,6 +31,7 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 - [SOC137 — Malicious File/Script Download Attempt](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc137-malicious-file-download/SOC137-Malicious-File-Download.md)
 - [SOC165 — Possible SQL Injection Payload Detected](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc165-possible-sql-injection-payload-detected/SOC165-SQL-Injection-Investigation.md)
 - [SOC166 — Reflected XSS Investigation](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc166-reflected-XSS-investigation/SOC166-Reflected-XSS-Investigation.md)
+- [SOC167-170 — Detecting Web Attacks](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc167-170-detecting-web-attacks/SOC167-170-Detecting-Web-Attacks.md)
 
 ## Detections
 - [SSH Brute-force Detection and Response](detections/ssh-bruteforce-fail2ban-wazuh.md)
