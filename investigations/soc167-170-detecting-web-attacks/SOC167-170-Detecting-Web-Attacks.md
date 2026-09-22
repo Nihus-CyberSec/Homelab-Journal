@@ -4,7 +4,7 @@
 **Category:** Web Attacks  
 **Role:** Security Analyst
 
-This continues the "Detecting Web Attacks" series from [SOC166](./soc166-reflected-xss.md), covering four more alerts: a false-positive command injection trigger, a real command injection compromise, an IDOR attack, and an attempted LFI.
+This continues the "Detecting Web Attacks" series from [SOC166](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc166-reflected-XSS-investigation/SOC166-Reflected-XSS-Investigation.md), covering four more alerts: a false-positive command injection trigger, a real command injection compromise, an IDOR attack, and an attempted LFI.
 
 ---
 
@@ -62,6 +62,9 @@ Filtering Log Management by the source IP surfaced the full request. The Request
 
 ![SOC168 request body showing whoami](images/soc168-request-body.png)
 
+### User-Agent Analysis
+The request's User-Agent string reads: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) — a signature identifying Internet Explorer 6 on Windows XP. This alert fired in 2022, and by that point IE6/XP was already roughly two decades old and effectively extinct in real-world traffic. It's highly unlikely an attacker was genuinely running IE6 on XP; far more likely, this is a spoofed User-Agent. Attackers commonly fake old or generic browser strings like this to disguise automated tools — custom scripts, vulnerability scanners, exploitation frameworks — as ordinary, low-suspicion web traffic, hoping the request blends in and slips past simple signature- or heuristic-based detections.
+
 Reviewing other requests from the same source IP showed the attacker had run multiple additional commands, not just a single probe — indicating an active exploitation attempt rather than a one-off scan.
 
 ![SOC168 additional attacker requests](images/soc168-additional-requests.png)
@@ -104,6 +107,9 @@ Checking their individual response sizes showed a distinct, non-zero response si
 
 ![SOC169 response codes and sizes](images/soc169-response-sizes.png)
 
+### User-Agent Analysis
+The User-Agent string, Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322), again signals IE6 on Windows XP — the same outdated, almost certainly spoofed signature seen in SOC168. This supports the IDOR verdict: the attacker was likely using a scripted tool to iterate through ID values, and a fake legacy User-Agent is a simple way to make that automated traffic look like an ordinary, harmless visitor.
+
 ### Verdict
 **True Positive — attack successful.** The attacker exploited an Insecure Direct Object Reference to access other users' information without authorization. Direction Internet → Company Network, not a planned test, escalated to Tier 2.
 
@@ -134,6 +140,9 @@ The request URL shows a classic Local File Inclusion (LFI) path traversal attemp
 
 ![SOC170 500 response, zero size](images/soc170-response-status.png)
 
+## User-Agent Analysis
+Same spoofed IE6/XP User-Agent pattern as SOC168 and SOC169: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322). Combined with the path traversal payload in the URL, this points to an automated LFI scanning tool disguising itself as a legacy browser — consistent with the attack being deliberate and malicious, even though it ultimately failed (500 response).
+
 ### Verdict
 **True Positive, attack unsuccessful.** The traffic was malicious (deliberate LFI attempt) but did not succeed — the server errored out rather than returning file contents. No containment or Tier 2 escalation needed.
 
@@ -152,3 +161,13 @@ Malicious ≠ successful. This alert is a good contrast to SOC168 and SOC169 abo
 | SOC170 | LFI | True Positive — unsuccessful | No |
 
 Across these four alerts, the common thread was **correlating the web request with a second data source** — endpoint history, response codes/sizes, or request sequencing — to move from "the rule fired" to an actual verdict. That's the core SOC triage loop, and it's the same loop from SOC166 and SOC137 before it, just applied to different attack techniques each time.
+
+### A Note on Automated Tooling
+
+Across SOC168, SOC169, and SOC170, the traffic pattern points to automated tools rather than an attacker manually typing payloads by hand. Real intrusions today are rarely someone hand-crafting a request like `whoami` in a browser bar — they're typically scripted scanners (Nikto, Dirbuster, custom Python tooling, etc.) probing at scale. A few signs of that automation showed up in these four alerts:
+
+- **Spoofed/mismatched User-Agent:** SOC168, SOC169, and SOC170 all carried the same outdated `MSIE 6.0 / Windows NT 5.1` signature — a browser that's been extinct for two decades by 2022. Legitimate traffic wouldn't consistently present that header while executing command injection, IDOR, and LFI payloads back to back. A static, recycled User-Agent across otherwise distinct attacks is a strong tell that it's hardcoded into a script or scanner rather than coming from a real browser session.
+- **Sequential, mechanical request patterns:** SOC169's IDOR attack showed the attacker stepping through user IDs in a consistent, structured sequence rather than the erratic, non-linear browsing pattern a real user would produce — a hallmark of a script iterating through parameter values.
+- **Payload-first requests:** SOC168 and SOC170 both involved the attack payload embedded directly in the first request from that source (a command in the request body, a path traversal string in the URL) with no preceding "normal" browsing activity — consistent with a scanner sending known payloads directly rather than a human exploring the site first.
+
+None of these alerts showed the classic volumetric signature of a full directory-brute-force scan (dozens of requests to `/admin/`, `/backup/`, `/config/` in under a second), but the header reuse and mechanical request structure across three separate attack types on the same lab point the same direction: this traffic was tool-driven, not hand-typed. Recognizing that early — via User-Agent inconsistency, request sequencing, or payload-first behavior — is often the first sign an alert deserves a closer look before assuming it's routine.
