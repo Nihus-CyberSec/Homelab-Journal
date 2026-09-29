@@ -41,7 +41,7 @@ I analysed the URL with **VirusTotal** and **Hybrid Analysis**. VirusTotal showe
 
 Observations from the alert alone, before using any tools:
 
-- **Suspicious path.** `/wp-content/plugins/akismet/fv/index.php` looks like a WordPress plugin path, but Akismet is an anti-spam plugin and has no legitimate `fv/index.php` login-style page. This suggests a phishing kit placed on a compromised WordPress site.
+- **Suspicious path.** `/wp-content/plugins/akismet/fv/index.php` looks like a WordPress plugin path, however this is not a known Akismet file path. It rather suggests a phishing kit placed on a compromised WordPress site.
 - **Victim email in the query string.** `?email=ellie@letsdefend.io` shows the link was crafted for this user, typical of targeted credential-harvesting emails.
 - **Plain HTTP.** No TLS on a page that would be asking for credentials.
 - **`.ru` domain** with no business relationship to the company.
@@ -66,7 +66,7 @@ Submitted the full URL to VirusTotal.
 
 Most other vendors returned Clean or Unrated, including Google Safe Browsing, OpenPhish, PhishTank and URLhaus. This is normal for a low-profile phishing page on a compromised site: no single blocklist has it, but several well-known security vendors classify it as phishing or malicious.
 
-The domain resolved to `195.24.68.4` when I scanned it, while the alert shows `91.189.114.8`. This is expected, because the alert is from 2021 and DNS records and hosting change over time. For this investigation the alert IP is the relevant one, though I listed both in the IOCs.
+The domain resolved to `195.24.68.4` when I scanned it, while the alert shows `91.189.114.8`. This is expected, because the alert is from 2021 and DNS records and hosting change over time. For this investigation the alert IP is the relevant one, and I list both in the IOCs.
 
 ![VirusTotal detection](images/02-virustotal-url-detection.png)
 
@@ -144,7 +144,7 @@ Playbook question: *Has anyone accessed the IP/URL/Domain?*
 
 | Tactic | Technique |
 |---|---|
-| Initial Access | T1566.002 - Phishing: Spearphishing Link |
+| Initial Access | T1566.002 - Phishing: Spearphishing Link (delivery method not confirmed) |
 | Execution | T1204.001 - User Execution: Malicious Link |
 | Credential Access | Credential harvesting through a fake login page (suspected, not confirmed) |
 
@@ -156,19 +156,22 @@ Playbook question: *Has anyone accessed the IP/URL/Domain?*
 
 ## 8. Recommendations
 
-Done:
-1. **Contain** EmilyComp (completed).
+### Done
 
-Recommended follow-up:
-2. **Block** `mogagrocol.ru` and `91.189.114.8` on the proxy and firewall.
-3. **Credentials:** reset the password for `ellie`, revoke active sessions, and review sign-ins for unusual activity.
-4. **Email hunt:** find the delivery email and remove it from all mailboxes.
-5. **Scope:** search proxy logs for any other host that requested `mogagrocol.ru`.
-6. **User awareness:** inform the user and reinforce phishing-reporting guidance.
+- Contained EmilyComp (172.16.17.49).
+
+### Recommended follow-up
+
+1. **Block** `mogagrocol.ru` and `91.189.114.8` on the proxy and firewall.
+2. **Credentials:** reset the password for `ellie`, revoke active sessions, and review sign-ins for unusual activity.
+3. **Email hunt:** Delivery source: search mailboxes for the URL to find how it reached the user, and remove any matching emails.
+4. **Scope:** search proxy logs for any other host that requested `mogagrocol.ru`.
+5. **User awareness:** inform the user and reinforce phishing-reporting guidance.
 
 ## 9. Analyst Note
 
-> SOC141 is a True Positive. User ellie on host EmilyComp (172.16.17.49) accessed the phishing URL `http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io`, which the proxy allowed. VirusTotal flagged it 9/92 (phishing/malicious by Kaspersky, BitDefender, Sophos, Fortinet and others) and Hybrid Analysis scored it 100/100 Malicious, with sandbox runs labelling it a phishing site. The URL fits a credential-harvesting pattern on a likely compromised WordPress site. EmilyComp has been contained. Recommended: block the domain and IP, reset ellie's credentials, and remove the phishing email from all mailboxes.
+> SOC141 is a True Positive. User ellie on host EmilyComp (172.16.17.49) accessed the phishing URL http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io, which the proxy allowed. VirusTotal flagged it 9/92 (phishing/malicious by Kaspersky, BitDefender, Sophos, Fortinet and others) and Hybrid Analysis scored it 100/100 Malicious, with sandbox runs labelling it a phishing site. The URL structure suggests a credential-harvesting page on a likely compromised WordPress site. Whether ellie submitted credentials could not be confirmed from proxy logs, so the account is treated as potentially compromised. EmilyComp has been contained.
+Recommended: block the domain and IP, reset ellie's credentials and review sign-ins, identify how the link was delivered (search mailboxes for the URL) and remove any matching emails.
 
 ## 10. Lessons Learned
 
