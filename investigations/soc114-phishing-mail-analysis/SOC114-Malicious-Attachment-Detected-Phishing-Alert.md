@@ -15,7 +15,7 @@ A phishing email with the subject "Invoice" and an attachment was delivered to `
 | Sender | accounting@cmail.carleton.ca |
 | Recipient | richard@letsdefend.io |
 | Subject | Invoice |
-| SMTP source | 49[.]234[.]43[.]39 |
+| SMTP source | 49.234.43.39 |
 | Device action | Allowed (mail delivered) |
 | MITRE (as listed on ticket) | T1598.001 |
 
@@ -45,8 +45,8 @@ At 14:15:45, about 27 minutes after delivery, RichardPRD made this request:
 | Field | Value |
 |---|---|
 | Source | 172.16.17.45:53948 |
-| Destination | 5[.]135[.]143[.]133:443 (as logged) |
-| Request URL | hxxp://andaluciabeach[.]net/image/network[.]exe |
+| Destination | 5.135.143.133:443 (as logged) |
+| Request URL | hxxp://andaluciabeach.net/image/network.exe |
 | Method | GET |
 | Process | EQNEDT32.EXE |
 | Parent process | excel.exe (MD5 `8b88ebbb05a0e56b7dcc708498c02b3e`) |
@@ -116,7 +116,7 @@ This corroborates the "Opened" verdict from an independent source: the URL that 
 | Time (as logged) | Event |
 |---|---|
 | 13:48:04 | Mail delivered from 49.234.43.39 to the Exchange server |
-| 14:15:45 | RichardPRD: `excel.exe` -> `EQNEDT32.EXE` requests `network.exe` from andaluciabeach[.]net |
+| 14:15:45 | RichardPRD: `excel.exe` -> `EQNEDT32.EXE` requests `network.exe` from andaluciabeach.net |
 | After 14:15 | `JuicyPotato.EXE` present in the process list |
 
 The alert shows a `+03:00` offset while the log data has none. I ordered events using the logged times as they appear.
@@ -146,7 +146,7 @@ Performed:
 ![Email deleted](screenshots/11-email-deleted.png)
 
 Recommended next steps:
-- Block `andaluciabeach[.]net` and `5[.]135[.]143[.]133` at the proxy/firewall, and `49[.]234[.]43[.]39` at the mail gateway
+- Block `andaluciabeach.net` and `5.135.143.133` at the proxy/firewall, and `49.234.43.39` at the mail gateway
 - Reset Richard's credentials, since `JuicyPotato.EXE` suggests privilege escalation
 - Search other mailboxes for mail from `accounting@cmail.carleton.ca`
 - Hunt for `network.exe` on RichardPRD and check for lateral movement; reimage the host if compromise is confirmed
@@ -156,9 +156,9 @@ Recommended next steps:
 | Type | Value |
 |---|---|
 | Sender | accounting@cmail.carleton.ca |
-| SMTP IP | 49[.]234[.]43[.]39 |
-| Payload URL | hxxp://andaluciabeach[.]net/image/network[.]exe |
-| Payload IP | 5[.]135[.]143[.]133 |
+| SMTP IP | 49.234.43.39 |
+| Payload URL | hxxp://andaluciabeach.net/image/network.exe |
+| Payload IP | 5.135.143.133 |
 | Attachment SHA-256 | 3ca672bab9b59d83640c01fd50d5a25b1ed7654d5448ffac544d80f5f0dd75b5 |
 | Payload (network.exe) SHA-256 | 92f557d8f467ea3884dccb68e3bd5de07b945aed1db10e65e6c263f053bd4930 |
 | Excel MD5 (parent process) | 8b88ebbb05a0e56b7dcc708498c02b3e |

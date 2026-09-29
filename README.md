@@ -32,7 +32,7 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 - [SOC165 — Possible SQL Injection Payload Detected](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc165-possible-sql-injection-payload-detected/SOC165-SQL-Injection-Investigation.md)
 - [SOC166 — Reflected XSS Investigation](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc166-reflected-XSS-investigation/SOC166-Reflected-XSS-Investigation.md)
 - [SOC167-170 — Detecting Web Attacks](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc167-170-detecting-web-attacks/SOC167-170-Detecting-Web-Attacks.md)
-- [SOC114 — Malicious Attachment Detected - Phishing Alert](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc-114-phishing-mail-analysis/SOC114-Malicious-Attachment-Detected-Phishing-Alert.md)
+- [SOC114 — Malicious Attachment Detected - Phishing Alert](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc114-phishing-mail-analysis/SOC114-Malicious-Attachment-Detected-Phishing-Alert.md)
 - [SOC141 — Phishing URL Analysis](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc141-phishing-url-analysis/SOC141-Phishing-URL-Detected.md)
 ## Detections
 - [SSH Brute-force Detection and Response](detections/ssh-bruteforce-fail2ban-wazuh.md)
