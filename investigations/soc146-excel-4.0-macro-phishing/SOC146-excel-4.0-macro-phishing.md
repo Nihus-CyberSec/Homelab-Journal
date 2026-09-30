@@ -1,6 +1,7 @@
 # SOC146: Phishing Mail Detected - Excel 4.0 Macros
 
 **Platform:** LetsDefend | **Severity:** High | **Type:** Exchange | **Result:** True Positive | **Playbook:** 20 (100%)
+
 **MITRE ATT&CK:** T1566.001, T1204.002, T1105, T1218.010 (see mapping below)
 
 ## Summary
