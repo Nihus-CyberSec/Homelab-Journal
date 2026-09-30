@@ -34,5 +34,7 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 - [SOC167-170 — Detecting Web Attacks](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc167-170-detecting-web-attacks/SOC167-170-Detecting-Web-Attacks.md)
 - [SOC114 — Malicious Attachment Detected - Phishing Alert](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc114-phishing-mail-analysis/SOC114-Malicious-Attachment-Detected-Phishing-Alert.md)
 - [SOC141 — Phishing URL Analysis](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc141-phishing-url-analysis/SOC141-Phishing-URL-Detected.md)
+- [SOC146 — Phishing Mail Detected - Excel 4.0 Macros](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc146-excel-4.0-macro-phishing/SOC146-excel-4.0-macro-phishing.md)
+
 ## Detections
 - [SSH Brute-force Detection and Response](detections/ssh-bruteforce-fail2ban-wazuh.md)
