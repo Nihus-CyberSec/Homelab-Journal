@@ -37,6 +37,7 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 - [SOC146 — Phishing Mail Detected - Excel 4.0 Macros](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc146-excel-4.0-macro-phishing/SOC146-excel-4.0-macro-phishing.md)
 - [SOC105 — Requested Threat Intel URL Address (Bitly Shortlink)](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc105-bitly-shortlink-fp/SOC105-Requested-T.I.-URL-Address.md)
 - [SOC109 — Emotet Malware Detected](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc109-emotet-malware-detected/SOC109-Emotet-Malware-Detected.md)
+- [SOC119 — Malicious Executable File Detected (False Positive)](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc119-malicious-executable-file-detected/SOC119-Malicious-Executable-File-Detected.md)
 
 ## Detections
 - [SSH Brute-force Detection and Response](detections/ssh-bruteforce-fail2ban-wazuh.md)
