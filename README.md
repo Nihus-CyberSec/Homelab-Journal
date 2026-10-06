@@ -39,6 +39,7 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 - [SOC109 — Emotet Malware Detected](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc109-emotet-malware-detected/SOC109-Emotet-Malware-Detected.md)
 - [SOC119 — Malicious Executable File Detected (False Positive)](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc119-malicious-executable-file-detected/SOC119-Malicious-Executable-File-Detected.md)
 - [SOC104 — Malware Triage (Invoice.exe)](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc104-malware-triage/SOC104-Malware-Triage-(Invoice.exe).md)
+- [SOC138 — Suspicious Xls File](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc138-Detected-Suspicious-Xls-File/soc138-Detected-Suspicious-Xls-File.md)
 
 ## Detections
 - [SSH Brute-force Detection and Response](detections/ssh-bruteforce-fail2ban-wazuh.md)
