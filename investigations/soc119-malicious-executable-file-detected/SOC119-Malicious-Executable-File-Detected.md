@@ -197,16 +197,3 @@ I did not change the verdict. It is based on the evidence above, and I am record
 5. **Match logs to the alert, not to similar-looking ones.** The OS log came from a different host (172.16.17.59 vs 172.16.17.5), a different user and a different year. It is baseline context, not evidence for this incident.
 
 ---
-
-## 8. Evidence index
-
-| # | File | Shows |
-|---|---|---|
-| 1 | `images/01-alert-details.png` | Alert fields |
-| 2 | `images/02-log-management-raw-logs.png` | Proxy log and OS log for `win-rar.com` |
-| 3 | `images/03-endpoint-processes.png` | Endpoint – Processes (Agent Down) |
-| 4 | `images/04-endpoint-browser-history.png` | Endpoint – Browser History (Agent Down) |
-| 5 | `images/05-virustotal-url.png` | VirusTotal URL report, 0/92 |
-| 6 | `images/06-virustotal-ip.png` | VirusTotal IP report, 0/91 |
-| 7 | `images/07-case-report-false-positive.png` | Playbook answers, result and analyst note |
-| 8 | `images/08-closed-alert-view.png` | Closed Alerts view (label discrepancy) |
