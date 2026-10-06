@@ -1,4 +1,4 @@
-# SOC105 - Requested T.I. URL Address (Bitly Shortlink)
+# Threat Intel URL Request: Bitly Shortlink (SOC105)
 
 **Platform:** LetsDefend | **Alert type:** ThreatIntel | **Severity:** High | **Event ID:** 75
 **Verdict:** False Positive | **MITRE ATT&CK mapping on alert:** T1566 (Phishing)

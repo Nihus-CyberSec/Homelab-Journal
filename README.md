@@ -35,7 +35,7 @@ Build a public, recruiter-visible record of practical SOC skills while working t
 - [SOC114 — Malicious Attachment Detected - Phishing Alert](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc114-phishing-mail-analysis/SOC114-Malicious-Attachment-Detected-Phishing-Alert.md)
 - [SOC141 — Phishing URL Analysis](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc141-phishing-url-analysis/SOC141-Phishing-URL-Detected.md)
 - [SOC146 — Phishing Mail Detected - Excel 4.0 Macros](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc146-excel-4.0-macro-phishing/SOC146-excel-4.0-macro-phishing.md)
-- [SOC105 — Requested Threat Intel URL Address (Bitly Shortlink)](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc105-bitly-shortlink-fp/SOC105-Requested-T.I.-URL-Address.md)
+ - [Threat Intel URL Request — Bitly Shortlink (SOC105)](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc105-bitly-shortlink-fp/SOC105-Threat-Intel-URL-Request.md)
 - [SOC109 — Emotet Malware Detected](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc109-emotet-malware-detected/SOC109-Emotet-Malware-Detected.md)
 - [SOC119 — Malicious Executable File Detected (False Positive)](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc119-malicious-executable-file-detected/SOC119-Malicious-Executable-File-Detected.md)
 - [SOC104 — Malware Triage (Invoice.exe)](https://github.com/Nihus-CyberSec/Homelab-Journal/blob/main/investigations/soc104-malware-triage/SOC104-Malware-Triage-(Invoice.exe).md)
