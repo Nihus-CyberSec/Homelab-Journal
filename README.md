@@ -21,7 +21,7 @@ Hands-on SOC analyst portfolio: **15+ alert investigations** (phishing, malware,
 | [SOC141 – Phishing URL Detected](investigations/soc141-phishing-url-analysis/SOC141-Phishing-URL-Detected.md) | Phishing | True Positive – malicious URL confirmed with VirusTotal and Hybrid Analysis; host contained |
 | [SOC146 – Phishing Mail (Excel 4.0 Macros)](investigations/soc146-excel-4.0-macro-phishing/SOC146-excel-4.0-macro-phishing.md) | Phishing | True Positive – macro delivery, C2 URLs in proxy logs, `regsvr32` DLL execution; host contained |
 | [SOC104 – Malware Triage (Invoice.exe)](investigations/soc104-malware-triage/SOC104-Malware-Triage-%28Invoice.exe%29.md) | Malware | True Positive – C2 contact confirmed in proxy logs; host contained |
-| [SOC145 – Ransomware Detected](investigations/soc145-ransomware-detected/SOC145-Ransomware-Detected.md) | Ransomware | True Positive – No proof of C2 cotact; host contained |
+| [SOC145 – Ransomware Detected](investigations/soc145-ransomware-detected/SOC145-Ransomware-Detected.md) | Ransomware | True Positive – No proof of C2 contact; host contained |
 | [SOC109 – Emotet Malware Detected](investigations/soc109-emotet-malware-detected/SOC109-Emotet-Malware-Detected.md) | Malware | True Positive – C2 contact checked and found not accessed |
 | [SOC138 – Suspicious Xls File](investigations/soc138-Detected-Suspicious-Xls-File/soc138-Detected-Suspicious-Xls-File.md) | Malware | True Positive – macro-enabled Excel file with a C2 address; host contained |
 | [SOC137 – Malicious File/Script Download Attempt](investigations/soc137-malicious-file-download/SOC137-Malicious-File-Download.md) | Malware | True Positive – Triage of a malicious file/script download attempt |
